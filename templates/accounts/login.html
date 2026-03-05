@@ -1,76 +1,44 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Login to Your Account
+Login
 {% endblock %}
 
 {% block content %}
-    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <div class="bg-white shadow-xl rounded-2xl p-10 w-full max-w-md">
-        
-            <h2 class="text-3xl font-bold text-center mb-8">
-                Login to Your Account
-            </h2>
 
-            <form method="post" class="space-y-6">
-                {% csrf_token %}
+<div class="flex justify-center items-center min-h-[70vh]">
 
-                <!-- Username / Email / Phone -->
-                <div>
-                    <label class="block mb-2 font-medium">
-                        Username / Email / Phone
-                    </label>
-                    <input 
-                        type="text"  name="username_or_email_or_phone_number"
-                        placeholder="Enter username, email or phone number"
-                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                    >
-                </div>
+<div class="bg-white p-10 rounded-xl shadow-lg w-96">
 
-                <!-- Password -->
-                <div>
-                    <label class="block mb-2 font-medium">
-                        Password
-                    </label>
-                    <input 
-                        type="password" name="password"
-                        placeholder="Enter password"
-                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                    >
-                </div>
+<h2 class="text-2xl font-bold text-center mb-6">
+Login to Your Account
+</h2>
 
-                <!-- Remember + Forgot -->
-                <div class="flex justify-between items-center text-sm">
-                    <label class="flex items-center space-x-2">
-                        <input type="checkbox" class="rounded">
-                        <span>Remember me</span>
-                    </label>
+<form method="POST">
 
-                    <a href="#" class="text-blue-600 hover:underline">
-                        Forgot password?
-                    </a>
-                </div>
+{% csrf_token %}
 
-                <!-- Login Button -->
-                <div>
-                    <button 
-                        type="submit"
-                        class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-                    >
-                        Login
-                    </button>
-                </div>
+<input type="text" name="username_or_email"
+placeholder="Username or Email"
+class="w-full border px-4 py-2 mb-4 rounded">
 
-            </form>
+<input type="password" name="password"
+placeholder="Password"
+class="w-full border px-4 py-2 mb-6 rounded">
 
-            <!-- Register Link -->
-            <p class="text-center mt-6 text-gray-600">
-                Don't have an account?
-                <a href="{% url 'register' %}" class="text-blue-600 hover:underline">
-                    Register
-                </a>
-            </p>
+<button class="w-full bg-blue-600 text-white py-2 rounded">
+Login
+</button>
 
-        </div>
-    </div>
+</form>
+
+<p class="text-center mt-4">
+Don't have an account?
+<a href="{% url 'register' %}" class="text-blue-600">Register</a>
+</p>
+
+</div>
+
+</div>
+
 {% endblock %}
