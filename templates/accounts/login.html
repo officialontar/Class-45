@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login to Your Account
+{% endblock %}
+
+{% block content %}
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white shadow-xl rounded-2xl p-10 w-full max-w-md">
+        
+            <h2 class="text-3xl font-bold text-center mb-8">
+                Login to Your Account
+            </h2>
+
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+
+                <!-- Username / Email / Phone -->
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Username / Email / Phone
+                    </label>
+                    <input 
+                        type="text"  name="username_or_email_or_phone_number"
+                        placeholder="Enter username, email or phone number"
+                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+                    >
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Password
+                    </label>
+                    <input 
+                        type="password" name="password"
+                        placeholder="Enter password"
+                        class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+                    >
+                </div>
+
+                <!-- Remember + Forgot -->
+                <div class="flex justify-between items-center text-sm">
+                    <label class="flex items-center space-x-2">
+                        <input type="checkbox" class="rounded">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="#" class="text-blue-600 hover:underline">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <!-- Login Button -->
+                <div>
+                    <button 
+                        type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    >
+                        Login
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Register Link -->
+            <p class="text-center mt-6 text-gray-600">
+                Don't have an account?
+                <a href="{% url 'register' %}" class="text-blue-600 hover:underline">
+                    Register
+                </a>
+            </p>
+
+        </div>
+    </div>
+{% endblock %}

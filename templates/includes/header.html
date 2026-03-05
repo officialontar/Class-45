@@ -1,0 +1,44 @@
+<!-- Navbar -->
+    <nav class="bg-gray-900 text-white px-8 py-4">
+        <div class="flex justify-between items-center">
+
+            <!-- Left Side Logo -->
+            <div>
+                <a href="{% url 'home' %}" class="text-2xl font-bold hover:text-blue-400 transition">
+                    MyLogo
+                </a>
+            </div>
+
+            <!-- Right Side Links -->
+            <div class="space-x-6 flex items-center">
+
+                <a href="{% url 'home' %}" class="hover:text-blue-400 transition">
+                    Home
+                </a>
+
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'profile' %}" class="hover:text-blue-400 transition">
+                    {{ request.user.get_full_name }}
+                </a>
+                
+
+                <!-- Logout Button (use this instead when logged in) -->
+                
+                <a href="{% url 'logout' %}" 
+                   class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg transition">
+                    Logout
+                </a>
+
+                {% else %}
+
+                <a href="{% url 'register' %}" class="hover:text-blue-400 transition">
+                    Register
+                </a>
+
+                {% endif %}
+               
+
+            </div>
+        </div>
+    </nav>

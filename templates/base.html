@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        My Web App
+        {% endblock %}
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-100">
+
+    {% include 'includes/header.html' %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        Swal.fire({
+        icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% elif message.tags == 'warning' %}warning{% else %}info{% endif %}",
+        title: "{{ message|escapejs }}",
+        confirmButtonColor: "#2563eb"
+        });
+    </script>
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>

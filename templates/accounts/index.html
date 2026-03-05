@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Account Dashboard
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Build Modern Web Applications
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+            Clean design, responsive layout and powerful backend integration.
+        </p>
+        <div class="space-x-4">
+            <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                Get Started
+            </a>
+            <a href="#" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition">
+                Learn More
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+            Our Features
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-4">Fast Performance</h3>
+                <p class="text-gray-600">
+                    Optimized and lightweight design for better speed and efficiency.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-4">Responsive Design</h3>
+                <p class="text-gray-600">
+                    Fully responsive layout that works perfectly on all devices.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-4">Secure System</h3>
+                <p class="text-gray-600">
+                    Modern authentication and secure backend integration.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Call To Action Section -->
+<section class="py-20 bg-gray-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Project?
+        </h2>
+        <p class="text-gray-400 mb-8">
+            Join us today and build something amazing with modern technology.
+        </p>
+        <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition">
+            Create Account
+        </a>
+    </div>
+</section>
+{% endblock %}
