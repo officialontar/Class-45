@@ -18,23 +18,40 @@ Login to Your Account
 
 {% csrf_token %}
 
-<input type="text" name="username_or_email"
-placeholder="Username or Email"
+<input type="text"
+name="username_or_email"
+placeholder="Username or Email *"
+required
 class="w-full border px-4 py-2 mb-4 rounded">
 
-<input type="password" name="password"
-placeholder="Password"
-class="w-full border px-4 py-2 mb-6 rounded">
+<input type="password"
+name="password"
+placeholder="Password *"
+required
+class="w-full border px-4 py-2 mb-3 rounded">
 
-<button class="w-full bg-blue-600 text-white py-2 rounded">
+<div class="text-right mb-4">
+
+<a href="#" class="text-sm text-blue-600 hover:underline">
+Forgot Password?
+</a>
+
+</div>
+
+<button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
 Login
 </button>
 
 </form>
 
 <p class="text-center mt-4">
+
 Don't have an account?
-<a href="{% url 'register' %}" class="text-blue-600">Register</a>
+
+<a href="{% url 'register' %}" class="text-blue-600 font-semibold">
+Register
+</a>
+
 </p>
 
 </div>
